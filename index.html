@@ -1,0 +1,608 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>SB Realestate | Komaravolu Somasundaram</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Montserrat:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#f2ca50",
+              "primary-container": "#d4af37",
+              "on-primary-fixed-variant": "#574500",
+              "tertiary-container": "#b5b2b2",
+              "surface-dim": "#131313",
+              "error-container": "#93000a",
+              "on-secondary": "#303221",
+              "inverse-primary": "#735c00",
+              "inverse-on-surface": "#313030",
+              "surface-bright": "#3a3939",
+              "surface-container": "#201f1f",
+              secondary: "#c8c8b0",
+              "on-tertiary-fixed": "#1c1b1b",
+              "on-secondary-fixed": "#1b1d0e",
+              "on-background": "#e5e2e1",
+              "primary-fixed-dim": "#e9c349",
+              "on-primary-container": "#554300",
+              "on-secondary-fixed-variant": "#474836",
+              "surface-container-high": "#2a2a2a",
+              "inverse-surface": "#e5e2e1",
+              "surface-container-lowest": "#0e0e0e",
+              "primary-fixed": "#ffe088",
+              "surface-container-highest": "#353534",
+              "secondary-container": "#494a38",
+              background: "#131313",
+              "tertiary-fixed-dim": "#c8c6c5",
+              "on-tertiary-container": "#454545",
+              "secondary-fixed-dim": "#c8c8b0",
+              "on-secondary-container": "#b9baa3",
+              "secondary-fixed": "#e4e4cc",
+              tertiary: "#d0cecd",
+              "surface-container-low": "#1c1b1b",
+              "on-error": "#690005",
+              "on-primary": "#3c2f00",
+              "on-surface": "#e5e2e1",
+              "on-primary-fixed": "#241a00",
+              error: "#ffb4ab",
+              "surface-variant": "#353534",
+              "on-tertiary-fixed-variant": "#474646",
+              "on-error-container": "#ffdad6",
+              "surface-tint": "#e9c349",
+              "on-tertiary": "#313030",
+              outline: "#99907c",
+              "outline-variant": "#4d4635",
+              "tertiary-fixed": "#e5e2e1",
+              surface: "#131313",
+              "on-surface-variant": "#d0c5af",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "container-max": "1440px",
+              "section-gap": "120px",
+              "margin-desktop": "80px",
+              gutter: "32px",
+              unit: "8px",
+              "margin-mobile": "24px",
+            },
+            fontFamily: {
+              "label-caps": ["Montserrat"],
+              "headline-md": ["Playfair Display"],
+              "headline-lg": ["Playfair Display"],
+              "display-lg-mobile": ["Playfair Display"],
+              "body-md": ["Montserrat"],
+              "display-lg": ["Playfair Display"],
+              "body-lg": ["Montserrat"],
+            },
+            fontSize: {
+              "label-caps": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.15em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-md": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "600" },
+              ],
+              "headline-lg": [
+                "48px",
+                { lineHeight: "56px", fontWeight: "600" },
+              ],
+              "display-lg-mobile": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "display-lg": [
+                "72px",
+                {
+                  lineHeight: "84px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-lg": [
+                "18px",
+                {
+                  lineHeight: "32px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "400",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #0e0e0e;
+        color: #e5e2e1;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+      .glass-panel {
+        background: rgba(28, 27, 27, 0.4);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(212, 175, 55, 0.05);
+      }
+      .gold-glow {
+        box-shadow: 0 10px 40px rgba(212, 175, 55, 0.15);
+      }
+      .hero-gradient {
+        background: linear-gradient(
+          to bottom,
+          rgba(14, 14, 14, 0.2) 0%,
+          rgba(14, 14, 14, 0.9) 100%
+        );
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+    </style>
+  </head>
+  <body class="font-body-md text-on-surface">
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full top-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl border-b border-outline-variant/10"
+    >
+      <div
+        class="flex justify-between items-center px-margin-desktop py-6 max-w-container-max mx-auto"
+      >
+        <a
+          class="font-display-lg text-headline-md tracking-tighter text-primary-container uppercase"
+          href="#"
+          >SB Realestate</a
+        >
+        <div class="hidden md:flex items-center gap-10">
+          <a
+            class="font-label-caps text-[11px] text-on-surface hover:text-primary transition-colors tracking-[0.2em] uppercase"
+            href="#about"
+            >The Founder</a
+          >
+          <a
+            class="font-label-caps text-[11px] text-on-surface hover:text-primary transition-colors tracking-[0.2em] uppercase"
+            href="#services"
+            >Services</a
+          >
+          <a
+            class="font-label-caps text-[11px] text-on-surface hover:text-primary transition-colors tracking-[0.2em] uppercase"
+            href="#contact"
+            >Contact</a
+          >
+        </div>
+        <a
+          class="bg-primary-container text-on-primary-fixed px-8 py-3 font-label-caps tracking-widest text-[11px] hover:bg-primary transition-all uppercase"
+          href="#contact"
+        >
+          Inquire Now
+        </a>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <section
+      class="relative h-screen flex items-center justify-center overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0">
+        <img
+          alt="Luxurious Modern Indian Villa"
+          class="w-full h-full object-cover"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZwYEaLHD6M7IURtB31IstB32kheUZ--V2Eho3gUiKxTq-QwmfH5YDnmHcidRY-LkgivAXy6EHL_DAxZpnaEKI0h17I6P_p_VQKF_LccEXbo5Ebuz_giqwVbI1Ox4dGqd3m-gRhPWWlP2O_TZbqRFMTXmmhTIlqrgnOCL0tlZDbJIXlkWXgI7itmu2L6KuohmfAlpftDCoHfU-fW80fGlpYYyI6jffGHOh6Vv8xfeXnEw3dqBgYYsDgS4gthZ7QemTv9c7HmyKxMkQ"
+        />
+        <div class="absolute inset-0 hero-gradient"></div>
+      </div>
+      <div class="relative z-10 text-center px-margin-mobile max-w-5xl">
+        <span
+          class="font-label-caps text-label-caps text-primary tracking-[0.4em] uppercase mb-8 block animate-reveal"
+          >Premium Real Estate Advisory</span
+        >
+        <h1
+          class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8 leading-tight animate-reveal drop-shadow-2xl text-on-surface"
+        >
+          Komaravolu Somasundaram
+        </h1>
+        <div
+          class="flex flex-wrap items-center justify-center gap-4 md:gap-12 animate-reveal"
+        >
+          <div class="flex items-center gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary/60"></span>
+            <span
+              class="font-label-caps text-on-surface-variant tracking-widest uppercase text-[11px]"
+              >Vijayawada</span
+            >
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary/60"></span>
+            <span
+              class="font-label-caps text-on-surface-variant tracking-widest uppercase text-[11px]"
+              >Hyderabad</span
+            >
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary/60"></span>
+            <span
+              class="font-label-caps text-on-surface-variant tracking-widest uppercase text-[11px]"
+              >Vishakhapatnam</span
+            >
+          </div>
+        </div>
+        <div class="mt-16 animate-reveal">
+          <a
+            class="border border-primary-container/40 text-primary-container bg-surface-container-lowest/30 backdrop-blur-sm px-14 py-5 font-label-caps tracking-[0.3em] text-label-caps hover:bg-primary-container hover:text-on-primary-fixed transition-all duration-500 uppercase"
+            href="#about"
+          >
+            Discover Excellence
+          </a>
+        </div>
+      </div>
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <span
+          class="material-symbols-outlined text-primary-container/50 text-4xl"
+          >expand_more</span
+        >
+      </div>
+    </section>
+    <!-- About / Founder Section -->
+    <section
+      class="py-section-gap px-margin-desktop max-w-container-max mx-auto"
+      id="about"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+        <div class="md:col-span-5 space-y-10 animate-on-scroll">
+          <span
+            class="font-label-caps text-label-caps text-primary tracking-[0.3em] uppercase"
+            >The Founder</span
+          >
+          <h2
+            class="font-headline-lg text-headline-lg leading-tight text-on-surface"
+          >
+            Decades of Unrivaled Market Expertise.
+          </h2>
+          <p
+            class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed"
+          >
+            SB Realestate, under the leadership of Komaravolu Somasundaram, is
+            defined by a commitment to architectural integrity and discretion.
+            We facilitate the acquisition of heritage assets and premium
+            properties for a global clientele across Andhra Pradesh and
+            Telangana.
+          </p>
+          <div class="pt-8 space-y-5">
+            <div class="flex items-center gap-8 group">
+              <div
+                class="w-12 h-[1px] bg-primary-container/40 group-hover:w-20 transition-all duration-500"
+              ></div>
+              <span
+                class="font-label-caps text-[11px] tracking-[0.2em] text-on-surface uppercase group-hover:text-primary transition-colors"
+                >Vijayawada</span
+              >
+            </div>
+            <div class="flex items-center gap-8 group">
+              <div
+                class="w-12 h-[1px] bg-primary-container/40 group-hover:w-20 transition-all duration-500"
+              ></div>
+              <span
+                class="font-label-caps text-[11px] tracking-[0.2em] text-on-surface uppercase group-hover:text-primary transition-colors"
+                >Hyderabad</span
+              >
+            </div>
+            <div class="flex items-center gap-8 group">
+              <div
+                class="w-12 h-[1px] bg-primary-container/40 group-hover:w-20 transition-all duration-500"
+              ></div>
+              <span
+                class="font-label-caps text-[11px] tracking-[0.2em] text-on-surface uppercase group-hover:text-primary transition-colors"
+                >Vishakhapatnam</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="md:col-span-6 md:col-start-8 relative animate-on-scroll">
+          <div
+            class="aspect-[4/5] overflow-hidden rounded-sm border border-outline-variant/10 shadow-2xl"
+          >
+            <img
+              alt="Villa Detail"
+              class="w-full h-full object-cover hover:scale-105 transition-all duration-1000"
+              src="download.png"
+            />
+          </div>
+          <div
+            class="absolute -bottom-10 -right-10 w-64 h-64 bg-primary-container/5 backdrop-blur-3xl -z-10 rounded-full"
+          ></div>
+        </div>
+      </div>
+    </section>
+    <!-- Simplified Services Section -->
+    <section class="py-section-gap bg-surface-container-lowest" id="services">
+      <div class="px-margin-desktop max-w-container-max mx-auto text-center">
+        <span
+          class="font-label-caps text-label-caps text-primary tracking-[0.3em] uppercase animate-on-scroll"
+          >Expertise</span
+        >
+        <h2
+          class="font-headline-lg text-headline-lg mt-4 mb-20 animate-on-scroll text-on-surface"
+        >
+          Strategic Real Estate Services
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+          <div
+            class="p-14 glass-panel group hover:bg-primary-container/5 transition-all duration-700 animate-on-scroll"
+          >
+            <span
+              class="material-symbols-outlined text-primary-container text-5xl mb-10 block group-hover:scale-110 transition-transform"
+              >location_city</span
+            >
+            <h3 class="font-headline-md text-2xl mb-6 text-on-surface">
+              Property Sourcing
+            </h3>
+            <p class="font-body-md text-on-surface-variant leading-relaxed">
+              Identifying exclusive residential and commercial opportunities in
+              premium zones of Vijayawada and beyond.
+            </p>
+          </div>
+          <div
+            class="p-14 glass-panel group hover:bg-primary-container/5 transition-all duration-700 animate-on-scroll"
+          >
+            <span
+              class="material-symbols-outlined text-primary-container text-5xl mb-10 block group-hover:scale-110 transition-transform"
+              >handshake</span
+            >
+            <h3 class="font-headline-md text-2xl mb-6 text-on-surface">
+              Strategic Advisory
+            </h3>
+            <p class="font-body-md text-on-surface-variant leading-relaxed">
+              Expert guidance on market trends and investment potential in the
+              growing hubs of Hyderabad and Vizag.
+            </p>
+          </div>
+          <div
+            class="p-14 glass-panel group hover:bg-primary-container/5 transition-all duration-700 animate-on-scroll"
+          >
+            <span
+              class="material-symbols-outlined text-primary-container text-5xl mb-10 block group-hover:scale-110 transition-transform"
+              >verified_user</span
+            >
+            <h3 class="font-headline-md text-2xl mb-6 text-on-surface">
+              Secure Transactions
+            </h3>
+            <p class="font-body-md text-on-surface-variant leading-relaxed">
+              Ensuring absolute discretion and professional integrity in every
+              deal facilitated by SB Realestate.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section
+      class="py-section-gap px-margin-desktop max-w-container-max mx-auto"
+      id="contact"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+        <div class="md:col-span-5 animate-on-scroll">
+          <span
+            class="font-label-caps text-label-caps text-primary tracking-[0.3em] uppercase"
+            >Connect</span
+          >
+          <h2
+            class="font-headline-lg text-headline-lg mt-4 mb-8 text-on-surface"
+          >
+            Begin Your Consultation
+          </h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant mb-14">
+            Reach out to discuss your real estate requirements in Vijayawada,
+            Hyderabad, or Vishakhapatnam.
+          </p>
+          <div class="space-y-10">
+            <div class="flex items-center gap-8 group">
+              <div
+                class="w-14 h-14 rounded-full border border-primary-container/10 flex items-center justify-center group-hover:bg-primary-container/10 group-hover:border-primary-container/30 transition-all duration-500"
+              >
+                <span class="material-symbols-outlined text-primary-container"
+                  >call</span
+                >
+              </div>
+              <div>
+                <p
+                  class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-[0.2em] mb-1"
+                >
+                  Phone Number
+                </p>
+                <a
+                  class="font-headline-md text-2xl text-on-surface hover:text-primary transition-colors"
+                  href="tel:8977005391"
+                  >8977005391</a
+                >
+              </div>
+            </div>
+            <div class="flex items-center gap-8 group">
+              <div
+                class="w-14 h-14 rounded-full border border-primary-container/10 flex items-center justify-center group-hover:bg-primary-container/10 group-hover:border-primary-container/30 transition-all duration-500"
+              >
+                <span class="material-symbols-outlined text-primary-container"
+                  >mail</span
+                >
+              </div>
+              <div>
+                <p
+                  class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-[0.2em] mb-1"
+                >
+                  Email Address
+                </p>
+                <a
+                  class="font-headline-md text-xl text-on-surface hover:text-primary transition-colors"
+                  href="mailto:komaravolusomasundaram1961@gmail.com"
+                  >komaravolusomasundaram1961@gmail.com</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="md:col-span-6 md:col-start-7 glass-panel p-10 md:p-16 animate-on-scroll"
+        >
+          <form class="space-y-10">
+            <input
+              class="w-full bg-transparent border-0 border-b border-outline-variant/20 py-5 focus:ring-0 focus:border-primary-container transition-colors placeholder:text-on-surface-variant/40 font-body-md text-on-surface"
+              placeholder="Full Name"
+              type="text"
+            />
+            <input
+              class="w-full bg-transparent border-0 border-b border-outline-variant/20 py-5 focus:ring-0 focus:border-primary-container transition-colors placeholder:text-on-surface-variant/40 font-body-md text-on-surface"
+              placeholder="Email Address"
+              type="email"
+            />
+            <select
+              class="w-full bg-transparent border-0 border-b border-outline-variant/20 py-5 focus:ring-0 focus:border-primary-container transition-colors text-on-surface-variant/40 font-body-md appearance-none"
+            >
+              <option class="bg-surface-container-low">Select Region</option>
+              <option class="bg-surface-container-low">Vijayawada</option>
+              <option class="bg-surface-container-low">Hyderabad</option>
+              <option class="bg-surface-container-low">Vishakhapatnam</option>
+            </select>
+            <textarea
+              class="w-full bg-transparent border-0 border-b border-outline-variant/20 py-5 focus:ring-0 focus:border-primary-container transition-colors placeholder:text-on-surface-variant/40 font-body-md text-on-surface"
+              placeholder="Message"
+              rows="3"
+            ></textarea>
+            <button
+              class="w-full bg-primary-container text-on-primary-fixed py-6 font-label-caps tracking-[0.3em] text-label-caps gold-glow hover:bg-primary transition-all uppercase mt-10"
+              type="submit"
+            >
+              Send Inquiry
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer
+      class="w-full py-24 bg-surface-container-lowest border-t border-outline-variant/5"
+    >
+      <div
+        class="px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12"
+      >
+        <div class="space-y-4">
+          <a
+            class="font-display-lg text-headline-md text-primary-container block uppercase tracking-tighter"
+            href="#"
+            >SB Realestate</a
+          >
+          <p class="font-body-md text-on-surface-variant text-sm max-w-xs">
+            Excellence in property advisory. Under the leadership of Komaravolu
+            Somasundaram.
+          </p>
+        </div>
+        <div class="flex gap-16">
+          <div class="space-y-4">
+            <p
+              class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest"
+            >
+              Connect
+            </p>
+            <div class="flex flex-col gap-3">
+              <a
+                class="font-label-caps text-[11px] text-on-surface hover:text-primary transition-colors tracking-widest uppercase"
+                href="#"
+                >LinkedIn</a
+              >
+              <a
+                class="font-label-caps text-[11px] text-on-surface hover:text-primary transition-colors tracking-widest uppercase"
+                href="#"
+                >Instagram</a
+              >
+            </div>
+          </div>
+          <div class="space-y-4">
+            <p
+              class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest"
+            >
+              Legal
+            </p>
+            <div class="flex flex-col gap-3">
+              <a
+                class="font-label-caps text-[11px] text-on-surface hover:text-primary transition-colors tracking-widest uppercase"
+                href="#"
+                >Privacy</a
+              >
+              <a
+                class="font-label-caps text-[11px] text-on-surface hover:text-primary transition-colors tracking-widest uppercase"
+                href="#"
+                >Terms</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="px-margin-desktop max-w-container-max mx-auto mt-20 pt-8 border-t border-outline-variant/5 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <p
+          class="font-body-md text-on-surface-variant text-[11px] opacity-40 uppercase tracking-widest"
+        >
+          © 2024 SB Realestate. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Initial Reveal
+      gsap.from(".animate-reveal", {
+        y: 30,
+        opacity: 0,
+        duration: 1.4,
+        stagger: 0.15,
+        ease: "expo.out",
+        delay: 0.3,
+      });
+
+      // Scroll Animations
+      const scrollItems = document.querySelectorAll(".animate-on-scroll");
+      scrollItems.forEach((item) => {
+        gsap.from(item, {
+          scrollTrigger: {
+            trigger: item,
+            start: "top 90%",
+            toggleActions: "play none none none",
+          },
+          y: 40,
+          opacity: 0,
+          duration: 1.2,
+          ease: "power2.out",
+        });
+      });
+    </script>
+  </body>
+</html>
